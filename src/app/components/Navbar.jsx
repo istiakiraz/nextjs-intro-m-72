@@ -1,16 +1,27 @@
+import Link from 'next/link'
 import React from 'react'
 
 export default function Navbar() {
   return (
-    <div><nav className='flex justify-center gap-20 bg-gray-700 py-5'>
-          <ul>
+    <div><nav >
+          <ul className='flex justify-center gap-20 bg-gray-700 py-5'>
+            <Link href='/'>         
+            <li>
             Home
-          </ul>
-          <ul>
+          </li>
+            </Link>
+
+          <Link href='/services'>
+          <li>
             Services
-          </ul>
-          <ul>
+          </li>
+          </Link>
+
+         <Link href='/about'>
+          <li>
             About
+          </li>
+         </Link>
           </ul>
         </nav></div>
   )
