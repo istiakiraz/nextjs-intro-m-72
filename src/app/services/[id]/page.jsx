@@ -26,9 +26,9 @@ export default function ServiceDetailsPage({params}) {
     },
   ];
 
-    const id= params.id
+    const id= params?.id
 
-    const singleData = data.find((d)=> d._id == id)
+    const singleData = data?.find((d)=> d?._id == id)
 
   return (
     <div className='text-black' ><h1>ServiceDetailsPage</h1>
