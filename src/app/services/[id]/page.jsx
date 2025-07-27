@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function ServiceDetailsPage({params}) {
+export default async function  ServiceDetailsPage({params}) {
 
       const data = [
     {
@@ -26,15 +26,20 @@ export default function ServiceDetailsPage({params}) {
     },
   ];
 
-    const id= params?.id
+    const { id } = await params;
 
     const singleData = data?.find((d)=> d?._id == id)
 
-  return (
+  if(singleData){
+    return (
     <div className='text-black' ><h1>ServiceDetailsPage</h1>
     <p>ID : {id}</p>
     <p>{singleData.service_name}</p>
     <img src={singleData.service_image} alt={singleData.service_name} />
     </div>
   )
+  }else{
+    return <p className='*:text-red-500 text-7xl'>not found</p>
+   
+  }
 }
